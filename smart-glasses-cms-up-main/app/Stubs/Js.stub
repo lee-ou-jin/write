@@ -1,0 +1,12 @@
+/**
+ * 카드,리소스툴,폼필드 등등 이것저것다등록하면됨.
+ */
+//import SampleIndex from "./Fields/AmuzSample/IndexField.vue";
+//import SampleForm from "./Fields/AmuzSample/FormField.vue";
+//import SampleDetail from "./Fields/AmuzSample/DetailField.vue";
+
+Nova.booting((app, store) => {
+//    app.component('index-amuz-sample-field', SampleIndex)
+//    app.component('detail-amuz-sample-field', SampleForm)
+//    app.component('form-amuz-sample-field', SampleDetail)
+})

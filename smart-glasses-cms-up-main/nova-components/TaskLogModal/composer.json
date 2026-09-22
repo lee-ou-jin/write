@@ -1,0 +1,30 @@
+{
+    "name": "jerry/task-log-modal",
+    "description": "A Laravel Nova card.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "predis/predis": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jerry\\TaskLogModal\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jerry\\TaskLogModal\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

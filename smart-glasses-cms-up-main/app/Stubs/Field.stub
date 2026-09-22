@@ -1,0 +1,14 @@
+<?php
+namespace {{namespace}}\Nova\Fields;
+
+use Laravel\Nova\Fields\Field;
+
+class {{field}} extends Field
+{
+    /**
+     * The field's component.
+     *
+     * @var string
+     */
+    public $component = '{{uriKey}}';
+}

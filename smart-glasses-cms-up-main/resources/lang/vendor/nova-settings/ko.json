@@ -1,0 +1,8 @@
+{
+  "novaSettings.navigationItemTitle": "설정",
+  "novaSettings.saveButtonText": "설정 저장",
+  "novaSettings.noSettingsFieldsText": "설정 항목이 정의되지 않았습니다.",
+  "novaSettings.settingsSuccessToast": "설정이 성공적으로 업데이트 되었습니다!",
+  "novaSettings.general": "일반",
+  "novaSettings.sample": "샘플"
+}

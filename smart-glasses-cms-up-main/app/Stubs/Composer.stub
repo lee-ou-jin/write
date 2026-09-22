@@ -1,0 +1,34 @@
+{
+    "name": "{{vendor}}/{{package}}",
+    "type" : "amuz-package",
+    "description": "{{studly}} Package For CMS-UP by {{vendor}}",
+    "keywords": [
+        "laravel",
+        "nova",
+        "amuz",
+        "cms"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AmuzPackages\\{{studly}}\\": "src/",
+            "AmuzPackages\\{{studly}}\\Database\\Factories\\": "src/database/factories/",
+            "AmuzPackages\\{{studly}}\\Database\\Seeders\\": "src/database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "{{serviceProvider}}"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

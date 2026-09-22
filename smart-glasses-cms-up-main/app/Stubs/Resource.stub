@@ -1,0 +1,84 @@
+<?php
+
+namespace {{namespace}}\Nova\Resources;
+
+use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\ID;
+use App\Nova\Resource;
+use {{model}} as ResourceModel;
+
+class {{resourceName}} extends Resource
+{
+    public static string $model = ResourceModel::class;
+
+    public static function label(): string
+    {
+        return __('{{resourceName}}');
+    }
+
+    public function title(): string
+    {
+        return sprintf("%s",
+            $this->resource->getKey(),
+        );
+    }
+
+    public static $search = [
+        'id',
+    ];
+
+    public static $group = "{{group}}";
+
+    public function fields(NovaRequest $request): array
+    {
+        return [
+            ID::make()->sortable(),
+        ];
+    }
+
+    public function fieldsForIndex(NovaRequest $request): array
+    {
+        return $this->fields($request);
+    }
+
+    public function fieldsForDetail(NovaRequest $request): array
+    {
+        return $this->fields($request);
+    }
+
+    public function fieldsForInlineCreate(NovaRequest $request): array
+    {
+        return $this->fields($request);
+    }
+
+    public function fieldsForCreate(NovaRequest $request): array
+    {
+        return $this->fields($request);
+    }
+
+    public function fieldsForUpdate(NovaRequest $request): array
+    {
+        return $this->fields($request);
+    }
+
+    public function cards(NovaRequest $request): array
+    {
+        return [];
+    }
+
+    public function filters(NovaRequest $request): array
+    {
+        return [];
+    }
+
+    public function lenses(NovaRequest $request): array
+    {
+        return [];
+    }
+
+    public function actions(NovaRequest $request): array
+    {
+        return [];
+    }
+}

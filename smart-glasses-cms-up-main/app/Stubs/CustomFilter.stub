@@ -1,0 +1,22 @@
+<?php
+
+namespace {{namespace}}\Nova\Filters;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Laravel\Nova\Filters\Filter;
+
+class {{customFilter}} extends Filter
+{
+    public $component = '{{uriKey}}';
+
+    public function apply(Request $request, $query, $value): Builder
+    {
+        return $query;
+    }
+
+    public function options(Request $request): array
+    {
+        return [];
+    }
+}

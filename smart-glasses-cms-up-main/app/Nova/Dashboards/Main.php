@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Nova\Dashboards;
+
+use App\Models\Session;
+use InteractionDesignFoundation\HtmlCard\HtmlCard;
+use Laravel\Nova\Dashboards\Main as Dashboard;
+
+class Main extends Dashboard
+{
+    public function name(): string
+    {
+        return __("Dashboard");
+    }
+    public function cards(): array
+    {
+        $analyticsCard = (env('ANALYTICS_VIEW_ID') !== null) ? [
+//            new \Tightenco\NovaGoogleAnalytics\PageViewsMetric,
+//            new \Tightenco\NovaGoogleAnalytics\VisitorsMetric,
+//            new \Tightenco\NovaGoogleAnalytics\MostVisitedPagesCard,
+//            new \Tightenco\NovaGoogleAnalytics\ReferrersList,
+//            new \Tightenco\NovaGoogleAnalytics\OneDayActiveUsersMetric,
+//            new \Tightenco\NovaGoogleAnalytics\SevenDayActiveUsersMetric,
+//            new \Tightenco\NovaGoogleAnalytics\FourteenDayActiveUsersMetric,
+//            new \Tightenco\NovaGoogleAnalytics\TwentyEightDayActiveUsersMetric,
+//            new \Tightenco\NovaGoogleAnalytics\SessionsMetric,
+//            new \Tightenco\NovaGoogleAnalytics\SessionDurationMetric,
+//            new \Tightenco\NovaGoogleAnalytics\SessionsByDeviceMetric,
+//            new \Tightenco\NovaGoogleAnalytics\SessionsByCountryMetric,
+        ] : [];
+
+        return [
+            (new HtmlCard())->width('1/2')
+                ->html('<div class="text-center max-w-xs mx-auto h-20 flex items-center py-48"><svg class="w-full h-20" xmlns="http://www.w3.org/2000/svg" width="186.000000pt" height="135.000000pt" viewBox="0 0 186.000000 135.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,135.000000) scale(0.100000,-0.100000)" fill="#216AF8" stroke="none"><path d="M995 1338 c-9 -29 -25 -94 -25 -104 0 -7 12 -15 28 -19 15 -3 42 -18 60 -32 l33 -25 44 37 c25 20 45 40 45 45 0 31 -176 124 -185 98z"/><path d="M710 1310 c-27 -27 -25 -66 5 -95 30 -31 65 -32 93 -2 44 46 14 117 -48 117 -17 0 -39 -9 -50 -20z"/><path d="M600 985 c0 -99 80 -214 185 -266 61 -30 69 -31 157 -27 79 3 101 8 146 33 l52 28 23 -21 c12 -12 39 -28 60 -37 l37 -15 0 154 c0 173 -5 186 -65 186 -37 0 -58 -21 -70 -71 -10 -40 -60 -95 -108 -118 -116 -56 -255 12 -288 141 l-13 48 -58 0 -58 0 0 -35z"/><path d="M162 418 c-85 -19 -152 -111 -152 -208 1 -127 150 -234 267 -189 19 7 29 7 31 0 2 -6 28 -11 58 -11 l54 0 0 137 c0 128 -2 139 -25 179 -45 76 -140 114 -233 92z m119 -137 c39 -40 39 -82 0 -122 -59 -59 -151 -22 -151 61 0 30 6 44 31 64 41 35 83 34 120 -3z"/><path d="M587 416 c-95 -35 -116 -85 -117 -268 l0 -138 54 0 54 0 4 129 c3 110 6 132 22 150 26 29 60 26 85 -5 19 -24 21 -40 21 -150 l0 -124 55 0 55 0 0 130 c0 117 2 132 20 150 25 25 62 26 83 2 14 -15 17 -42 17 -150 l0 -132 60 0 60 0 0 138 c0 112 -4 145 -19 178 -43 94 -144 125 -247 77 -27 -14 -34 -13 -61 1 -46 23 -103 28 -146 12z"/><path d="M1102 277 c3 -138 4 -145 31 -186 70 -106 224 -106 294 0 27 41 28 48 31 186 l4 143 -61 0 -61 0 0 -128 c0 -112 -2 -131 -18 -145 -24 -22 -65 -21 -85 1 -14 15 -17 41 -17 145 l0 127 -61 0 -61 0 4 -143z"/><path d="M1520 360 l0 -60 77 0 78 0 -88 -88 -87 -87 0 -58 0 -57 175 0 175 0 0 60 0 60 -92 0 -93 0 88 88 87 87 0 58 0 57 -160 0 -160 0 0 -60z"/></g></svg></div>'),
+
+            (new HtmlCard())->width('1/2')
+                ->view('nova.dashboard.current_users',[
+                    'sessions' => Session::with('user')->get()
+                ]),
+            ...$analyticsCard
+        ];
+    }
+}

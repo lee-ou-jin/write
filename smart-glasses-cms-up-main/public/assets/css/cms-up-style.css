@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.sidebar-menu h4 > span{
+    color:#AAA;
+    font-weight: 400 !important;
+    font-size:12px;
+}
+
+.sidebar-menu a[data-active-link="true"] {
+    color: rgba(var(--colors-primary-500));
+}
